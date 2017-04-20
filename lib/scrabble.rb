@@ -18,7 +18,6 @@ class String
   scrabble_values.store("P", 3)
   scrabble_values.store("F", 4)
   scrabble_values.store("H", 4)
-  scrabble_values.store("V", 4)
   scrabble_values.store("W", 4)
   scrabble_values.store("Y", 4)
   scrabble_values.store("K", 5)
@@ -29,7 +28,8 @@ class String
 
   define_method(:scrabble) do
     score = 0
-    letters = self.split("")
+    letters1 = self.upcase
+    letters = letters1.split("")
     letters.each() do |letter|
       points = scrabble_values.fetch(letter)
       score = score + points
